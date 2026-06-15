@@ -1,16 +1,17 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+// 1. Added HTMLMotionProps to the import
+import { motion, HTMLMotionProps } from "framer-motion";
 import { cn } from "@/lib/utils";
-import Magnetic from "./Magnetix"; // Import your new Magnetic wrapper
+import Magnetic from "./Magnetix";
 
-// We extend standard button attributes so it won't break your Contact form!
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+// 2. Changed to extend HTMLMotionProps<"button"> so it plays nicely with <motion.button>
+interface ButtonProps extends HTMLMotionProps<"button"> {
   children: React.ReactNode;
   size?: "sm" | "lg";
   variant?: "primary" | "ghost";
-  magnetic?: boolean; // The new magic prop
+  magnetic?: boolean; 
 }
 
 export default function Button({
@@ -18,7 +19,7 @@ export default function Button({
   size = "sm",
   variant = "primary",
   className,
-  magnetic = true, // We default it to true so all buttons feel premium automatically
+  magnetic = true, 
   ...props
 }: ButtonProps) {
   const sizeStyles = {
@@ -41,7 +42,6 @@ export default function Button({
     `,
   };
 
-  // 1. We store the actual button in a variable
   const buttonElement = (
     <motion.button
       {...props}
@@ -115,7 +115,6 @@ export default function Button({
     </motion.button>
   );
 
-  // 2. If magnetic is true, we wrap it. If not, we just return the normal button.
   if (magnetic && !props.disabled) {
     return <Magnetic>{buttonElement}</Magnetic>;
   }
