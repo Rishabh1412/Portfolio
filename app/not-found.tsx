@@ -3,11 +3,13 @@ import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 
 const NotFound = () => {
-  const location = usePathname();
+  // 1. usePathname returns a string directly
+  const pathname = usePathname();
 
   useEffect(() => {
-    console.error("404 Error: User attempted to access non-existent route:", location.pathname);
-  }, [location]);
+    // 2. Just use the string directly instead of trying to read .pathname
+    console.error("404 Error: User attempted to access non-existent route:", pathname);
+  }, [pathname]);
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-muted">
