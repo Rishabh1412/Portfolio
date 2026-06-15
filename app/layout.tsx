@@ -7,42 +7,42 @@ import localFont from "next/font/local";
 const axiforma = localFont({
   src: [
     {
-      path: "./fonts/axiforma/Kastelov - Axiforma Thin.otf",
+      path: "./fonts/axiforma/Kastelov-AxiformaThin.otf",
       weight: "100",
       style: "normal",
     },
     {
-      path: "./fonts/axiforma/Kastelov - Axiforma Light.otf",
+      path: "./fonts/axiforma/Kastelov-AxiformaLight.otf",
       weight: "300",
       style: "normal",
     },
     {
-      path: "./fonts/axiforma/Kastelov - Axiforma Regular.otf",
+      path: "./fonts/axiforma/Kastelov-AxiformaRegular.otf",
       weight: "400",
       style: "normal",
     },
     {
-      path: "./fonts/axiforma/Kastelov - Axiforma Medium.otf",
+      path: "./fonts/axiforma/Kastelov-AxiformaMedium.otf",
       weight: "500",
       style: "normal",
     },
     {
-      path: "./fonts/axiforma/Kastelov - Axiforma Semibold.otf",
+      path: "./fonts/axiforma/Kastelov-AxiformaSemibold.otf",
       weight: "600",
       style: "normal",
     },
     {
-      path: "./fonts/axiforma/Kastelov - Axiforma Bold.otf",
+      path: "./fonts/axiforma/Kastelov-AxiformaBold.otf",
       weight: "700",
       style: "normal",
     },
     {
-      path: "./fonts/axiforma/Kastelov - Axiforma Black.otf",
+      path: "./fonts/axiforma/Kastelov-AxiformaBlack.otf",
       weight: "900",
       style: "normal",
     },
     {
-      path: "./fonts/axiforma/Kastelov - Axiforma Bold Italic.otf",
+      path: "./fonts/axiforma/Kastelov-AxiformaBoldItalic.otf",
       weight: "700",
       style: "italic",
     },
