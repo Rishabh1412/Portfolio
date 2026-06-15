@@ -1,6 +1,6 @@
 # Rishabh Kartik | Creative Developer Portfolio
 
-A high-performance, meticulously animated personal portfolio website. Built to showcase full-stack projects, engineering experience, and UI/UX design capabilities with a strong focus on premium micro-interactions, smooth typography, and clean architecture.
+A high-performance, meticulously animated personal portfolio website. Built to showcase full-stack projects, engineering experience, and UI/UX design capabilities with a good focus on premium micro-interactions, smooth typography, and clean architecture.
 
 ![Portfolio Preview](./public/mainimg.png) ## ✨ Key Features
 
