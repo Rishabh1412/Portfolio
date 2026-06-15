@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 import TechStackMarquee from './TechStackMarquee';
 import Features from './Features';
 import Reveal from './Reveal'; // Import your universal animation wrapper
-import { premiumEase } from '@/lib/animations'; // Import your custom easing
 
 const Info = () => {
   return (
@@ -24,7 +23,7 @@ const Info = () => {
                 initial={{ scaleX: 0, opacity: 0 }}
                 whileInView={{ scaleX: 1, opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 1, ease: premiumEase, delay: 0.3 }}
+                transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
                 className='flex-1 h-px bg-[#333333] origin-left'
             />
         </div>
