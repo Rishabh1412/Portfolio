@@ -75,7 +75,7 @@ export default function Footer() {
           <div className="mt-24 mb-8 flex flex-col items-center justify-center gap-6">
             <Magnetic>
               <div className="cursor-pointer">
-                <Image src='/gray.png' alt="gray logo" width={30} height={24} className="w-[30px] h-auto"/>
+                <Image src='/gray.png' alt="gray logo" width={30} height={24} className="w-auto h-6"/>
               </div>
             </Magnetic>
             <p className="text-xs md:text-sm text-foreground/40 tracking-wide">

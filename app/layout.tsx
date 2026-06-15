@@ -1,53 +1,14 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import LenisProvider from "./providers/lenis-providers";
-//local fonts
-import localFont from "next/font/local";
 
-const axiforma = localFont({
-  src: [
-    {
-      path: "./fonts/axiforma/Kastelov-AxiformaThin.otf",
-      weight: "100",
-      style: "normal",
-    },
-    {
-      path: "./fonts/axiforma/Kastelov-AxiformaLight.otf",
-      weight: "300",
-      style: "normal",
-    },
-    {
-      path: "./fonts/axiforma/Kastelov-AxiformaRegular.otf",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "./fonts/axiforma/Kastelov-AxiformaMedium.otf",
-      weight: "500",
-      style: "normal",
-    },
-    {
-      path: "./fonts/axiforma/Kastelov-AxiformaSemibold.otf",
-      weight: "600",
-      style: "normal",
-    },
-    {
-      path: "./fonts/axiforma/Kastelov-AxiformaBold.otf",
-      weight: "700",
-      style: "normal",
-    },
-    {
-      path: "./fonts/axiforma/Kastelov-AxiformaBlack.otf",
-      weight: "900",
-      style: "normal",
-    },
-    {
-      path: "./fonts/axiforma/Kastelov-AxiformaBoldItalic.otf",
-      weight: "700",
-      style: "italic",
-    },
-  ],
-  variable: "--font-axiforma",
+// Import the Google Font
+import { Plus_Jakarta_Sans } from "next/font/google";
+
+// Configure it to use the exact same CSS variable you were already using
+const primaryFont = Plus_Jakarta_Sans({ 
+  subsets: ["latin"],
+  variable: "--font-plusjakarta-sans", 
   display: "swap",
 });
 
@@ -64,8 +25,8 @@ export default function RootLayout({
   return (
     <html lang="en" className="overflow-x-hidden">
       <body
-      suppressHydrationWarning={true}
-        className={`${axiforma.className} antialiased`}
+        suppressHydrationWarning={true}
+        className={`${primaryFont.className} antialiased`}
       >
         <LenisProvider>
           {children}

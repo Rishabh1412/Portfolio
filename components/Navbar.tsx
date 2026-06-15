@@ -60,7 +60,8 @@ const Navbar = () => {
             alt="Logo"
             width={28}
             height={22}
-            className="w-7 h-auto"
+            priority
+            className="w-auto h-6"
           />
         </motion.a>
 

@@ -15,7 +15,6 @@ const experiences = [
       "Spearheaded the visual identity and UI assets for the college hackathon. Managed end-to-end design team operations to ensure a cohesive digital experience for all participants.",
     // Replace these paths with your actual icon image paths in your public folder
     iconUrl: "/sc2lg.png", 
-    iconFallback: "🔴", // Fallback emoji just in case the image isn't ready
   },
   {
     id: 2,
@@ -24,7 +23,6 @@ const experiences = [
     description:
       "Directed club operations and organized technical workshops for the 2024-2025 academic session. Fostered a collaborative campus community focused on modern development and design practices.",
     iconUrl: "/pxllg.png",
-    iconFallback: "👻",
   },
 ];
 
@@ -62,6 +60,7 @@ export default function ExperienceSection() {
                         alt={exp.title} 
                         fill 
                         className="object-cover"
+                        sizes="48px"
                       /> 
                     </div>
                   </Magnetic>

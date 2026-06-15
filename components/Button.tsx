@@ -54,7 +54,7 @@ export default function Button({
         relative
         overflow-hidden
         rounded-full
-        font-medium
+        font-semibold
         focus-visible:outline-none
         focus-visible:ring-2
         border-white
