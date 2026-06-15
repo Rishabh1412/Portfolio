@@ -64,7 +64,7 @@ export default function FeaturesSection() {
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{
                   duration: 0.7,
-                  ease: [0.16, 1, 0.3, 1],
+                  ease: [0.16, 1, 0.3, 1] as const,
                   delay: index * 0.15,
                 }}
                 className="group flex flex-col p-4 lg:p-none gap-8 py-4 w-[85vw] bg-card-bg lg:bg-background rounded-2xl md:w-auto md:flex-1 shrink-0 snap-center"

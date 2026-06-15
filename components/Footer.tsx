@@ -43,7 +43,7 @@ export default function Footer() {
               viewport={{ once: true }}
               transition={{
                 duration: 0.5,
-                ease: [0.16, 1, 0.3, 1],
+                ease: [0.16, 1, 0.3, 1] as const,
                 delay: index * 0.1, // Stagger effect
               }}
               className="group flex justify-between items-start md:items-center py-6 md:py-8 gap-2 md:gap-0 cursor-pointer"

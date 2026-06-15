@@ -23,7 +23,7 @@ const Info = () => {
                 initial={{ scaleX: 0, opacity: 0 }}
                 whileInView={{ scaleX: 1, opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
+                transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] as const, delay: 0.3 }}
                 className='flex-1 h-px bg-[#333333] origin-left'
             />
         </div>

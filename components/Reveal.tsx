@@ -24,7 +24,7 @@ export default function Reveal({ children, width = "100%", delay = 0 }: RevealPr
         }}
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
-        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] as const, delay }}
       >
         {children}
       </motion.div>

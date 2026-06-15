@@ -43,7 +43,7 @@ const Navbar = () => {
         }}
         transition={{
           duration: 1,
-          ease: [0.16, 1, 0.3, 1],
+          ease: [0.16, 1, 0.3, 1] as const,
         }}
         className="sticky top-0 z-50 flex items-center gap-4 border-b border-white/5 bg-background/60 backdrop-blur-3xl px-4 md:px-12 py-4">
         
@@ -126,14 +126,14 @@ const Navbar = () => {
             initial={{ opacity: 0, backdropFilter: "blur(0px)" }}
             animate={{ opacity: 1, backdropFilter: "blur(16px)" }}
             exit={{ opacity: 0, backdropFilter: "blur(0px)" }}
-            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] as const }}
             className="fixed inset-0 z-[100] bg-black/80"
           >
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] as const }}
               className="flex h-full flex-col items-center justify-center gap-8"
             >
               <button
@@ -155,7 +155,7 @@ const Navbar = () => {
                       transition={{
                         delay: index * 0.05,
                         duration: 0.6,
-                        ease: [0.16, 1, 0.3, 1],
+                        ease: [0.16, 1, 0.3, 1] as const,
                       }}
                       className="text-4xl font-medium tracking-tight cursor-pointer text-white/80 hover:text-white transition-colors"
                     >
@@ -169,7 +169,7 @@ const Navbar = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 20 }}
-                transition={{ delay: 0.3, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                transition={{ delay: 0.3, duration: 0.5, ease: [0.16, 1, 0.3, 1] as const}}
                 className="mt-8"
               >
                 {/* Mobile CTA */}
