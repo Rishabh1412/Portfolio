@@ -20,7 +20,7 @@ export async function POST(req: Request) {
       from: 'Portfolio Contact <onboarding@resend.dev>', // Resend's testing email
       to: 'rishabhkartik2004@gmail.com', // Replace with YOUR actual email address
       subject: `New Portfolio Message from ${name}`,
-      reply_to: email, // This allows you to hit "Reply" in your inbox and reply directly to the sender
+      replyTo: email, // This allows you to hit "Reply" in your inbox and reply directly to the sender
       text: `
         Name: ${name}
         Email: ${email}
