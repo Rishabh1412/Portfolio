@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Button from "./Button";
 import Image from "next/image";
@@ -48,38 +50,64 @@ const Home = () => {
 
         {/* Action Buttons */}
         <Reveal delay={0.4}>
-          {/* Removed items-start, added w-full */}
           <div className="flex flex-col md:flex-row gap-4 w-full">
-            {/* Added w-full md:w-auto to both buttons */}
-            <Button variant="primary" size="lg" className="w-full md:w-auto">
-              View My Works
-            </Button>
+            {/* Wrapped in anchor tags to make them actively scroll to sections */}
+            <a href="#projects" className="w-full md:w-auto">
+              <Button variant="primary" size="lg" className="w-full">
+                View My Works
+              </Button>
+            </a>
 
-            <Button variant="ghost" size="lg" className="w-full md:w-auto">
-              Get in Touch
-            </Button>
+            <a href="#contact" className="w-full md:w-auto">
+              <Button variant="ghost" size="lg" className="w-full">
+                Get in Touch
+              </Button>
+            </a>
           </div>
         </Reveal>
       </div>
 
-      {/* Recent Project Section */}
-      <div className="gap-6 flex flex-col mt-8 md:mt-12">
+      {/* Recent Project Section - UPGRADED */}
+      <div className="gap-6 flex flex-col mt-8 md:mt-12 w-full">
         <Reveal delay={0.5}>
-          <p className="description-text tracking-[2px] text-sm font-medium">
-            RECENT PROJECT
-          </p>
+          <div className="flex items-center gap-4">
+            
+            {/* Added a simple minimalist dot sign in front */}
+            <div className="flex items-center gap-2.5">
+              <div className="w-1.5 h-1.5 rounded-full bg-white/40" />
+              <p className="text-white/40 tracking-[2px] text-xs font-mono uppercase mt-0.5">
+                Recent Project
+              </p>
+            </div>
+            
+            {/* Subtle connecting line */}
+            <div className="flex-1 h-px bg-white/[0.05]" />
+          </div>
         </Reveal>
 
         <Reveal delay={0.6}>
-          <div className="w-full rounded-3xl overflow-hidden border border-white/5 bg-[#121212]">
-            <Image
-              src="/mainimg.png"
-              alt="Main Image"
-              width={1920}
-              height={1080}
-              sizes="100vw"
-              className="w-full h-auto object-cover transition-transform duration-700 hover:scale-[1.02]"
-            />
+          {/* Added a glass browser frame, smoother border radius, and deeper shadow */}
+          <div className="group w-full rounded-2xl md:rounded-[2rem] overflow-hidden border border-white/10 bg-[#050505] shadow-2xl transition-all duration-700 hover:border-white/20">
+            
+            {/* Mock App Header */}
+            <div className="h-10 md:h-12 border-b border-white/5 bg-white/[0.02] backdrop-blur-sm flex items-center px-4 md:px-6 gap-2">
+              <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-white/20 transition-colors duration-300 group-hover:bg-red-500/80" />
+              <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-white/20 transition-colors duration-300 group-hover:bg-yellow-500/80" />
+              <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-white/20 transition-colors duration-300 group-hover:bg-green-500/80" />
+            </div>
+
+            {/* Image Container */}
+            <div className="relative overflow-hidden">
+              <Image
+                src="/mainimg.png"
+                alt="Main Image"
+                width={1920}
+                height={1080}
+                sizes="100vw"
+                className="w-full h-auto object-cover opacity-90 transition-all duration-1000 ease-out group-hover:scale-[1.03] group-hover:opacity-100"
+              />
+            </div>
+            
           </div>
         </Reveal>
       </div>

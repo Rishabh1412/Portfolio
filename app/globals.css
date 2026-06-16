@@ -9,7 +9,7 @@
   /* Added a few supplementary variables for a polished UI */
   --muted: #989898; 
   --dark-muted: #81868F; 
-  --gradient-end: #44474B;
+  --gradient-end: #222222;
   --accent: #d0d0d0;
   --dark-accent: #717171;
   --card-bg: #1a1a1a;
@@ -44,7 +44,7 @@ html {
 /* 4. Custom Utility Classes */
 @layer utilities {
   .heading-text {
-    @apply text-[32px] md:text-[56px] leading-[1.1] font-medium tracking-tight text-foreground;
+    @apply text-[28px] md:text-[48px] leading-[1.1] font-semibold tracking-tight text-foreground;
   }
 
   .description-text {

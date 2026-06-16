@@ -4,27 +4,27 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const techStack = [
-  { name: "Vercel", icon: "https://cdn.simpleicons.org/vercel" },
-  { name: "Next.js", icon: "https://cdn.simpleicons.org/nextdotjs" },
-  { name: "Node.js", icon: "https://cdn.simpleicons.org/nodedotjs" },
-  { name: "Firebase", icon: "https://cdn.simpleicons.org/firebase" },
-  { name: "Figma", icon: "https://cdn.simpleicons.org/figma" },
-  { name: "MongoDB", icon: "https://cdn.simpleicons.org/mongodb" },
-  { name: "Gemini", icon: "https://cdn.simpleicons.org/googlegemini" },
+  // Using explicitly white logos for Vercel & Next.js so they are visible on dark mode
+  { name: "Vercel", icon: "https://cdn.simpleicons.org/vercel/white" },
+  { name: "Next.js", icon: "https://cdn.simpleicons.org/nextdotjs/white" },
+  // Using Devicon for the true, multi-color original logos
+  { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" },
+  { name: "Firebase", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg" },
+  { name: "Figma", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" },
+  { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" },
+  // Using Google's official Gemini sparkle asset for the true gradient
+  { name: "Gemini", icon: "https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg" },
 ];
 
 export default function TechStackMarquee() {
   return (
-    <div className="relative flex w-full flex-col items-center justify-center overflow-hidden py-10 bg-background">
+    <div className="relative flex w-full flex-col items-center justify-center overflow-hidden py-10 bg-black">
       
       {/* Edge Fades */}
-      <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-24 md:w-48 bg-gradient-to-r from-background to-transparent" />
-      <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-24 md:w-48 bg-gradient-to-l from-background to-transparent" />
+      <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-24 md:w-48 bg-gradient-to-r from-black to-transparent" />
+      <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-24 md:w-48 bg-gradient-to-l from-black to-transparent" />
 
-      {/* Marquee Track
-        We animate to -50%. Because we have 4 identical blocks inside, 
-        moving 50% shifts exactly 2 blocks over, creating a mathematically perfect, infinite loop.
-      */}
+      {/* Marquee Track */}
       <motion.div
         className="flex w-max"
         animate={{
@@ -32,11 +32,10 @@ export default function TechStackMarquee() {
         }}
         transition={{
           ease: "linear",
-          duration: 40, // Increased duration slightly so it doesn't move too fast across 4 blocks
+          duration: 40, 
           repeat: Infinity,
         }}
       >
-        {/* Render 4 sets to ensure it never runs out of track on Ultra-wide monitors */}
         {[1, 2, 3, 4].map((setIndex) => (
           <div 
             key={setIndex} 
@@ -46,34 +45,38 @@ export default function TechStackMarquee() {
               <motion.div
                 key={index}
                 whileHover={{ 
-                  scale: 1.1,
-                  y: -2 
+                  scale: 1.05, 
+                  y: -4        
                 }}
                 transition={{
                   type: "spring",
-                  stiffness: 400,
-                  damping: 25,
+                  stiffness: 300,
+                  damping: 20,
                 }}
-                className="group flex cursor-pointer items-center gap-3 opacity-50 transition-all duration-300 hover:opacity-100"
+                className="group flex cursor-pointer items-center gap-3 transition-all duration-500"
               >
-                <img 
-                  src={tech.icon} 
-                  alt={`${tech.name} logo`} 
-                  /* Added group-hover:drop-shadow-[0_0_12px_rgba(255,255,255,0.3)] 
-                    This creates a soft white halo on hover. Colored logos look radiant, 
-                    and the pure black Next.js logo stays clearly visible!
-                  */
-                  className="
-                    h-7 w-7 md:h-9 md:w-9 object-contain 
-                    grayscale brightness-0 invert 
-                    transition-all duration-300 
-                    group-hover:grayscale-0 
-                    group-hover:brightness-100 
-                    group-hover:invert-0 
-                    group-hover:drop-shadow-[0_0_12px_rgba(255,255,255,0.4)]
-                  " 
-                />
-                <span className="text-xl font-medium tracking-tight text-foreground md:text-2xl">
+                {/* Image Container with Ambient Glow */}
+                <div className="relative flex items-center justify-center">
+                  <div className="absolute inset-0 z-0 scale-150 rounded-full bg-white/0 opacity-0 blur-xl transition-all duration-500 group-hover:bg-white/10 group-hover:opacity-100" />
+                  
+                  <img 
+                    src={tech.icon} 
+                    alt={`${tech.name} logo`} 
+                    className="
+                      relative z-10
+                      h-7 w-7 object-contain md:h-9 md:w-9 
+                      opacity-40 grayscale 
+                      transition-all duration-500 ease-out 
+                      group-hover:opacity-100 
+                      group-hover:grayscale-0 
+                    " 
+                    /* Removed brightness-0 and invert! 
+                      Now it just starts grayed out, and transitions to its true original colors on hover.
+                    */
+                  />
+                </div>
+                
+                <span className="text-xl font-medium tracking-tight text-foreground opacity-50 transition-opacity duration-500 group-hover:opacity-100 md:text-2xl">
                   {tech.name}
                 </span>
               </motion.div>

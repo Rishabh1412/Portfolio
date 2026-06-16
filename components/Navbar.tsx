@@ -45,7 +45,7 @@ const Navbar = () => {
           duration: 1,
           ease: [0.16, 1, 0.3, 1] as const,
         }}
-        className="sticky top-0 z-50 flex items-center gap-4 border-b border-white/5 bg-background/60 backdrop-blur-3xl px-4 md:px-12 py-4">
+        className="sticky top-0 z-50 flex items-center gap-4 border-b border-white/5 bg-background/60 backdrop-blur-3xl px-4 md:px-12 py-3">
         
         {/* Logo - Clicks back to top */}
         <motion.a
@@ -58,16 +58,14 @@ const Navbar = () => {
           <Image
             src="/whitelogo.png"
             alt="Logo"
-            width={28}
-            height={22}
+            width={24}
+            height={20}
             priority
-            className="w-auto h-6"
+            className="w-auto h-5"
           />
         </motion.a>
 
-        <h3 className="text-xl font-medium tracking-tight">
-          Rishabh
-        </h3>
+        
 
         {/* Desktop Nav */}
         <div 

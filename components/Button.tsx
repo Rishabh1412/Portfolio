@@ -24,7 +24,7 @@ export default function Button({
 }: ButtonProps) {
   const sizeStyles = {
     sm: "px-5 py-2 text-sm",
-    lg: "px-6 py-4 text-base",
+    lg: "px-6 py-3 text-sm",
   };
 
   const variantStyles = {
