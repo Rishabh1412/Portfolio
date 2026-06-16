@@ -1,12 +1,10 @@
 "use client";
 
 import React from "react";
-// 1. Added HTMLMotionProps to the import
 import { motion, HTMLMotionProps } from "framer-motion";
 import { cn } from "@/lib/utils";
 import Magnetic from "./Magnetix";
 
-// 2. Changed to extend HTMLMotionProps<"button"> so it plays nicely with <motion.button>
 interface ButtonProps extends HTMLMotionProps<"button"> {
   children: React.ReactNode;
   size?: "sm" | "lg";
@@ -22,24 +20,15 @@ export default function Button({
   magnetic = true, 
   ...props
 }: ButtonProps) {
+  
   const sizeStyles = {
     sm: "px-5 py-2 text-sm",
     lg: "px-6 py-3 text-sm",
   };
 
   const variantStyles = {
-    primary: `
-      bg-foreground
-      text-background
-      border
-      border-transparent
-    `,
-    ghost: `
-      bg-transparent
-      text-foreground
-      border
-      border-white/10
-    `,
+    primary: "bg-foreground text-background border border-transparent",
+    ghost: "bg-transparent text-foreground border border-white/10",
   };
 
   const buttonElement = (
@@ -49,22 +38,10 @@ export default function Button({
       whileHover={props.disabled ? "initial" : "hover"}
       whileTap={props.disabled ? "initial" : "tap"}
       className={cn(
-        `
-        group
-        relative
-        overflow-hidden
-        rounded-full
-        font-semibold
-        focus-visible:outline-none
-        focus-visible:ring-2
-        border-white
-        border
-        disabled:opacity-70
-        disabled:cursor-not-allowed
-        `,
+        "group relative overflow-hidden rounded-full font-semibold focus-visible:outline-none focus-visible:ring-2 border-white border disabled:opacity-70 disabled:cursor-not-allowed",
         sizeStyles[size],
         variantStyles[variant],
-        className
+        className // Extends w-full safely
       )}
       variants={{
         initial: { scale: 1 },
@@ -98,7 +75,7 @@ export default function Button({
 
       {/* Content Parallax Container */}
       <motion.span
-        className="relative z-10 flex items-center justify-center gap-2"
+        className="relative z-10 flex items-center justify-center gap-2 w-full"
         variants={{
           initial: { y: 0 },
           hover: { y: -1 },
@@ -116,7 +93,8 @@ export default function Button({
   );
 
   if (magnetic && !props.disabled) {
-    return <Magnetic>{buttonElement}</Magnetic>;
+    // Pass the layout className down to the wrapper component!
+    return <Magnetic className={className}>{buttonElement}</Magnetic>;
   }
 
   return buttonElement;

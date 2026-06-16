@@ -126,11 +126,11 @@ export default function WorksSection() {
                   </div>
 
                   {/* Action Buttons */}
-                  <div className="flex flex-wrap gap-4 mt-auto">
-                    <Button variant="primary" className="pl-5 pr-6 text-sm h-11">
+                  <div className="flex flex-row gap-4 mt-auto">
+                    <Button variant="primary" className="text-sm h-11">
                       <Github size={16} className="mr-2" /> Source
                     </Button>
-                    <Button variant="ghost" className="pl-5 pr-6 text-sm h-11 group/btn">
+                    <Button variant="ghost" className="text-sm h-11 group/btn">
                       Live Preview <ArrowUpRight size={16} className="ml-2 text-foreground/50 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
                     </Button>
                   </div>

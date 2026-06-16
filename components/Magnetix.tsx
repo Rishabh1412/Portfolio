@@ -2,8 +2,14 @@
 
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { cn } from "@/lib/utils";
 
-export default function Magnetic({ children }: { children: React.ReactNode }) {
+interface MagneticProps {
+  children: React.ReactNode;
+  className?: string; // Accept incoming alignment layout styling
+}
+
+export default function Magnetic({ children, className }: MagneticProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
@@ -13,13 +19,15 @@ export default function Magnetic({ children }: { children: React.ReactNode }) {
     const middleX = clientX - (left + width / 2);
     const middleY = clientY - (top + height / 2);
     
-    // The divisor controls the "strength" of the magnet. Higher = weaker pull.
     setPosition({ x: middleX / 4, y: middleY / 4 }); 
   };
 
   const reset = () => {
     setPosition({ x: 0, y: 0 });
   };
+
+  // Determine standard display block patterns dynamically
+  const isFullWidth = className?.includes("w-full");
 
   return (
     <motion.div
@@ -28,7 +36,11 @@ export default function Magnetic({ children }: { children: React.ReactNode }) {
       onMouseLeave={reset}
       animate={{ x: position.x, y: position.y }}
       transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
-      className="inline-block"
+      // Use block layout structure if specified, otherwise default to inline-block
+      className={cn(
+        isFullWidth ? "block w-full md:w-auto" : "inline-block",
+        className
+      )}
     >
       {children}
     </motion.div>
