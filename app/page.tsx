@@ -6,6 +6,7 @@ import WorksSection from '@/components/WorkSection'
 import ExperienceSection from '@/components/ExperienceSection'
 import ContactSection from '@/components/ContactSection'
 import Footer from '@/components/Footer'
+import ToolsSection from '@/components/ToolsSection'
 
 const page = () => {
   return (
@@ -16,6 +17,7 @@ const page = () => {
       <WorksSection/>
       <ExperienceSection/>
       <ContactSection/>
+      {/*<ToolsSection/>*/}
       <Footer/>
     </>
   )
