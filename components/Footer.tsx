@@ -21,7 +21,7 @@ const socialLinks = [
     id: "01",
     platform: "Linkedin",
     handle: "/in/rishabh-kartik",
-    url: "https://linkedin.com/in/rishabh-kartik",
+    url: "https://www.linkedin.com/in/rishabh-kartik-46838428b/",
   },
   {
     id: "02",

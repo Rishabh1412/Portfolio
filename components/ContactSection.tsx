@@ -53,7 +53,7 @@ export default function ContactSection() {
 
   return (
     <section id="contact" className="w-full bg-background pt-32 pb-24 flex justify-center overflow-hidden">
-      <div className="w-full max-w-7xl px-6 md:px-12 flex flex-col gap-16">
+      <div className="w-full max-w-7xl px-6 md:px-12 flex flex-col gap-8 lg:gap-16">
         
         {/* Wireframe Header */}
         <Reveal delay={0.1}>

@@ -57,7 +57,7 @@ const Crosshair = ({ className }: { className?: string }) => (
 export default function WorksSection() {
   return (
     <section id="projects" className="w-full bg-background pt-32 pb-24 flex justify-center overflow-hidden">
-      <div className="w-full max-w-7xl px-6 md:px-12 flex flex-col gap-16">
+      <div className="w-full max-w-7xl px-6 md:px-12 flex flex-col gap-8 lg:gap-16">
         
         {/* Wireframe Header */}
         <Reveal delay={0.1}>
@@ -76,7 +76,7 @@ export default function WorksSection() {
         </Reveal>
 
         {/* Projects List */}
-        <div className="flex flex-col gap-12 md:gap-24">
+        <div className="flex flex-col gap-8 md:gap-24">
           {projects.map((project, index) => (
             <Reveal key={project.id} delay={0.2}>
               {/* Technical Card Container */}
@@ -130,9 +130,7 @@ export default function WorksSection() {
                     <Button variant="primary" className="text-sm h-11">
                       <Github size={16} className="mr-2" /> Source
                     </Button>
-                    <Button variant="ghost" className="text-sm h-11 group/btn">
-                      Live Preview <ArrowUpRight size={16} className="ml-2 text-foreground/50 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
-                    </Button>
+                    
                   </div>
                 </div>
 
