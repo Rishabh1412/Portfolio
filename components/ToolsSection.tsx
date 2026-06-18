@@ -92,7 +92,7 @@ export default function TechTopology() {
                     <h3 className="text-xl md:text-2xl font-medium text-white/90">
                       {layer.name}
                     </h3>
-                    <p className="text-xs md:text-sm text-white/40 leading-relaxed max-w-sm">
+                    <p className="text-sm text-white/40 leading-relaxed max-w-sm">
                       {layer.description}
                     </p>
                   </div>
