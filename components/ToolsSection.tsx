@@ -1,65 +1,68 @@
 "use client";
 
 import React from "react";
-import Reveal from "./Reveal";
-import { Terminal, Cpu, Layout, Layers } from "lucide-react";
+import { motion } from "framer-motion";
+import Reveal from "./Reveal"; 
+import { Layers, Database, Cpu, LayoutTemplate } from "lucide-react";
 
-const Crosshair = ({ className }: { className?: string }) => (
-  <div className={`absolute flex items-center justify-center bg-background w-[15px] h-[15px] ${className}`}>
-    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white/30">
-      <path d="M7.5 0V15M0 7.5H15" stroke="currentColor" strokeWidth="1" />
-    </svg>
-  </div>
-);
-
-const toolCategories = [
+const topologyLayers = [
   {
-    category: "Architecture & Frameworks",
-    icon: <Layers size={14} className="text-white/40" />,
+    id: "01",
+    name: "Client & Interface",
+    description: "Building responsive, pixel-perfect user interfaces and reusable component systems.",
+    icon: <LayoutTemplate size={16} className="text-white/40" />,
     tools: [
-      { name: "Next.js", description: "Production App Architecture", hotkey: "NXT" },
-      { name: "TypeScript", description: "Strictly Typed Ecosystem", hotkey: "TS" },
-      { name: "Tailwind CSS", description: "Fluid Design Systems", hotkey: "TW" },
-      { name: "Zustand", description: "Atomic State Orchestration", hotkey: "ZST" },
+      { name: "Figma", asset: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" },
+      { name: "Next.js", asset: "https://cdn.simpleicons.org/nextdotjs/white" },
+      { name: "Tailwind", asset: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" },
+      { name: "TypeScript", asset: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" },
     ]
   },
   {
-    category: "AI Engineering & Pipeline",
-    icon: <Cpu size={14} className="text-white/40" />,
+    id: "02",
+    name: "Logic & AI Integration",
+    description: "Developing serverless APIs, backend logic, and integrating generative AI tools.",
+    icon: <Cpu size={16} className="text-white/40" />,
     tools: [
-      { name: "LangGraph", description: "Stateful Multi-Agent Runtime", hotkey: "LGH" },
-      { name: "Google Gemini", description: "Context-Aware Generative Core", hotkey: "GEM" },
-      { name: "Redis", description: "Real-Time Microservice Caching", hotkey: "RDS" },
-      { name: "Vapi AI", description: "Real-Time Voice Orchestration", hotkey: "VAP" },
+      { name: "Node.js", asset: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" },
+      { name: "Python", asset: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" },
+      { name: "LLM Orchestration", asset: "https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg" },
+      { name: "Javascript", asset: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" },
     ]
   },
   {
-    category: "Design & Logic Layers",
-    icon: <Layout size={14} className="text-white/40" />,
+    id: "03",
+    name: "Data & Infrastructure",
+    description: "Designing scalable databases, implementing caching, and handling real-time data sync.",
+    icon: <Database size={16} className="text-white/40" />,
     tools: [
-      { name: "Figma", description: "High-Fidelity UI Architectures", hotkey: "FIG" },
-      { name: "Node.js", description: "Scalable Polyglot Backends", hotkey: "NODE" },
-      { name: "C++", description: "Algorithmic Analysis & Optimization", hotkey: "CPP" },
-      { name: "Python", description: "Distributed Systems & Automation", hotkey: "PY" },
+      { name: "MongoDB", asset: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" },
+      { name: "Redis", asset: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg" },
+      { name: "Socket.io", asset: "https://cdn.simpleicons.org/socketdotio/white" },
+      { name: "Docker", asset: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" },
     ]
   }
 ];
 
-export default function ToolsSection() {
+const Crosshair = ({ className }: { className?: string }) => (
+  <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" className={`absolute text-white/20 z-10 bg-background ${className}`}>
+    <path d="M7.5 0V15M0 7.5H15" stroke="currentColor" strokeWidth="1" />
+  </svg>
+);
+
+export default function TechTopology() {
   return (
-    <section id="tools" className="w-full bg-background pt-32 pb-24 flex justify-center overflow-hidden">
+    <section className="w-full bg-background pt-32 pb-24 flex justify-center overflow-hidden">
       <div className="w-full max-w-7xl px-6 md:px-12 flex flex-col gap-16">
         
-        {/* Architectural Section Header */}
         <Reveal delay={0.1}>
           <div className="flex flex-col gap-4 border-b border-white/10 pb-8 relative">
-            <div className="absolute bottom-0 left-0 w-full h-px bg-white/[0.03]" />
             <Crosshair className="-bottom-[7px] -left-2" />
             <Crosshair className="-bottom-[7px] -right-2" />
 
             <div className="flex items-center gap-3 text-white/40 font-mono text-xs uppercase tracking-widest">
-              <Terminal size={14} />
-              <span>[SYSTEM_INVENTORY] // Stack Modules</span>
+              <Layers size={14} />
+              <span>[SYSTEM_INVENTORY] // Stack Topology</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-white">
               Primary Tools
@@ -67,59 +70,58 @@ export default function ToolsSection() {
           </div>
         </Reveal>
 
-        {/* Categories Pipeline Stack */}
-        <div className="flex flex-col gap-16">
-          {toolCategories.map((cat, catIndex) => (
-            <div key={cat.category} className="flex flex-col gap-6">
-              
-              {/* Category Subheading Row */}
-              <Reveal delay={0.2 + catIndex * 0.1}>
-                <div className="flex items-center gap-3 border-b border-white/5 pb-3">
-                  {cat.icon}
-                  <h3 className="text-xs font-mono tracking-widest text-white/50 uppercase">
-                    {cat.category}
-                  </h3>
-                </div>
-              </Reveal>
+        <div className="relative flex flex-col w-full">
+          <div className="absolute left-6 md:left-[2.5rem] top-0 bottom-0 w-px bg-gradient-to-b from-white/20 via-white/5 to-transparent z-0 hidden md:block" />
 
-              {/* Grid System for Cards */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                {cat.tools.map((tool, toolIndex) => (
-                  <Reveal key={tool.name} delay={0.3 + (toolIndex * 0.05)}>
-                    <div className="group relative bg-[#030303] border border-white/5 hover:border-white/20 rounded-xl p-5 flex flex-col justify-between min-h-[110px] shadow-sm transition-all duration-500 ease-out cursor-default hover:bg-white/[0.01]">
-                      
-                      {/* Top Row: Name & Terminal Access Key */}
-                      <div className="flex justify-between items-start w-full">
-                        <h4 className="text-lg font-medium text-white/90 group-hover:text-white transition-colors duration-300">
+          <div className="flex flex-col gap-6 md:gap-8 relative z-10">
+            {topologyLayers.map((layer, index) => (
+              <Reveal key={layer.id} delay={0.2 + (index * 0.1)}>
+                <div className="group relative flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-12 bg-[#030303] border border-white/10 rounded-2xl p-6 md:p-8 transition-all duration-500 hover:border-white/30 hover:bg-[#050505] overflow-hidden">
+                  
+                  <div className="absolute inset-0 opacity-[0.02] pointer-events-none transition-opacity duration-500 group-hover:opacity-[0.05]" style={{ backgroundImage: 'linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
+
+                  <div className="flex flex-col gap-3 md:w-1/3 relative z-10">
+                    <div className="flex items-center gap-3">
+                      <div className="flex items-center justify-center w-8 h-8 rounded-lg border border-white/10 bg-white/[0.03]">
+                        {layer.icon}
+                      </div>
+                      <span className="font-mono text-[10px] text-white/40 tracking-widest">
+                        LAYER_{layer.id}
+                      </span>
+                    </div>
+                    <h3 className="text-xl md:text-2xl font-medium text-white/90">
+                      {layer.name}
+                    </h3>
+                    <p className="text-xs md:text-sm text-white/40 leading-relaxed max-w-sm">
+                      {layer.description}
+                    </p>
+                  </div>
+
+                  <div className="flex flex-wrap items-center gap-3 md:gap-4 md:w-2/3 relative z-10 w-full">
+                    {layer.tools.map((tool) => (
+                      <div 
+                        key={tool.name}
+                        className="flex flex-row items-center gap-3 bg-[#080808] border border-white/5 rounded-xl py-3 px-4 md:px-5 transition-all duration-300 hover:bg-white/[0.04] hover:border-white/20 hover:-translate-y-1"
+                      >
+                        <img 
+                          src={tool.asset} 
+                          alt={tool.name} 
+                          // Removed: opacity-70 filter grayscale group-hover:grayscale-0 group-hover:opacity-100
+                          // The icon is now 100% visible and colorful all the time.
+                          className="w-5 h-5 md:w-6 md:h-6 object-contain" 
+                        />
+                        <span className="text-xs md:text-sm font-medium text-white/60 tracking-wide transition-colors group-hover:text-white">
                           {tool.name}
-                        </h4>
-                        <span className="font-mono text-[10px] text-white/20 tracking-wider group-hover:text-white/40 transition-colors duration-300">
-                          // {tool.hotkey}
                         </span>
                       </div>
+                    ))}
+                  </div>
 
-                      {/* Bottom Row: Granular Tool Description */}
-                      <p className="text-xs text-white/40 font-light tracking-wide leading-relaxed mt-4 group-hover:text-white/60 transition-colors duration-300">
-                        {tool.description}
-                      </p>
-
-                      {/* Subtle Internal Wireframe Corner Lines on Hover */}
-                      <div className="absolute top-2 right-2 w-1.5 h-1.5 border-t border-r border-white/0 group-hover:border-white/20 transition-all duration-500" />
-                      <div className="absolute bottom-2 left-2 w-1.5 h-1.5 border-b border-l border-white/0 group-hover:border-white/20 transition-all duration-500" />
-                    </div>
-                  </Reveal>
-                ))}
-              </div>
-            </div>
-          ))}
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
-
-        {/* Context Narrative Sign-Off */}
-        <Reveal delay={0.6}>
-          <p className="text-base md:text-lg font-light text-white/50 leading-relaxed max-w-4xl border-l border-white/10 pl-6 mt-4">
-            From crafting high-fidelity interface paradigms in Figma to architecting low-latency distributed microservices, stateful multi-agent systems, and real-time streaming engines—these nodes compose my immediate engineering environment.
-          </p>
-        </Reveal>
 
       </div>
     </section>

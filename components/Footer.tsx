@@ -26,8 +26,8 @@ const socialLinks = [
   {
     id: "02",
     platform: "Instagram",
-    handle: "rishabh_14__p",
-    url: "https://instagram.com/rishabh_14__p",
+    handle: "@aqxa.art",
+    url: "https://instagram.com/aqxa.art",
   },
   {
     id: "03",
@@ -119,7 +119,7 @@ export default function Footer() {
                 [SYS_HALT] // End of Execution
               </span>
               <p className="text-xs md:text-sm text-foreground/40 font-light tracking-wide">
-                Designed and built with precision by Rishabh Kartik.
+                [SYS_AUTHOR] Engineered by Rishabh Kartik.
               </p>
             </div>
           </div>

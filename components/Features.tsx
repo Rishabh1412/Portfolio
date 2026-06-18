@@ -5,21 +5,8 @@ import { motion } from "framer-motion";
 
 const featuresData = [
   {
-    title: "Built for Scale",
-    description: "Designed with modern architecture patterns to handle growing workloads without compromising performance.",
-    // Abstract grid/network icon
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-foreground/50 transition-colors duration-500 group-hover:text-foreground">
-        <rect x="3" y="3" width="7" height="7" rx="1" />
-        <rect x="14" y="3" width="7" height="7" rx="1" />
-        <rect x="14" y="14" width="7" height="7" rx="1" />
-        <path d="M3 14h7v7H3z" />
-      </svg>
-    ),
-  },
-  {
-    title: "AI-Powered Workflow",
-    description: "Integrates intelligent automation and contextual decision-making across every step of the process.",
+    title: "Cognitive Voice Pipeline",
+    description: "Built on Vercel Edge infrastructure, integrating Google Gemini for context-aware evaluation and Vapi for real-time voice interaction.",
     // Abstract spark/AI icon
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-foreground/50 transition-colors duration-500 group-hover:text-foreground">
@@ -28,12 +15,25 @@ const featuresData = [
     ),
   },
   {
-    title: "Performance First",
-    description: "Optimized for speed, responsiveness, and seamless user experiences across devices.",
+    title: "Concurrent Execution",
+    description: "Engineered a low-latency pipeline using parallel async execution for LLM token streaming and Text-to-Speech synthesis.",
     // Abstract speed/lightning icon
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-foreground/50 transition-colors duration-500 group-hover:text-foreground">
         <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+      </svg>
+    ),
+  },
+  {
+    title: "Edge Optimization",
+    description: "Achieved consistent 90+ Lighthouse performance scores leveraging Next.js SSR, Edge Caching, and on-demand asset rendering.",
+    // Abstract grid/network icon
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-foreground/50 transition-colors duration-500 group-hover:text-foreground">
+        <rect x="3" y="3" width="7" height="7" rx="1" />
+        <rect x="14" y="3" width="7" height="7" rx="1" />
+        <rect x="14" y="14" width="7" height="7" rx="1" />
+        <path d="M3 14h7v7H3z" />
       </svg>
     ),
   },
@@ -52,7 +52,7 @@ export default function FeaturesSection() {
               viewport={{ once: true, margin: "-50px" }}
               transition={{
                 duration: 0.5,
-                ease: [0.16, 1, 0.3, 1] as const, // Using your premium ease curve
+                ease: [0.16, 1, 0.3, 1] as const, 
                 delay: index * 0.1,
               }}
               className="group relative flex flex-col p-8 rounded-2xl bg-[#0a0a0a] border border-white/[0.05] overflow-hidden transition-all duration-500 hover:border-white/[0.15]"

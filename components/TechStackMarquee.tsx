@@ -8,12 +8,10 @@ const techStack = [
   { name: "Vercel", icon: "https://cdn.simpleicons.org/vercel/white" },
   { name: "Next.js", icon: "https://cdn.simpleicons.org/nextdotjs/white" },
   // Using Devicon for the true, multi-color original logos
-  { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" },
+  { name: "TypeScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" },
   { name: "Firebase", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg" },
-  { name: "Figma", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" },
-  { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" },
   // Using Google's official Gemini sparkle asset for the true gradient
-  { name: "Gemini", icon: "https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg" },
+  { name: "Gemini API", icon: "https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg" },
 ];
 
 export default function TechStackMarquee() {
@@ -70,9 +68,6 @@ export default function TechStackMarquee() {
                       group-hover:opacity-100 
                       group-hover:grayscale-0 
                     " 
-                    /* Removed brightness-0 and invert! 
-                      Now it just starts grayed out, and transitions to its true original colors on hover.
-                    */
                   />
                 </div>
                 

@@ -19,7 +19,7 @@ const Info = () => {
             <div className='flex gap-6 items-center w-full'>
               <Reveal delay={0.1}>
                 <h2 className='text-3xl md:text-4xl font-semibold tracking-tight text-foreground'>
-                  Intervue
+                  Intervue Neo
                 </h2>
               </Reveal>
               
