@@ -52,7 +52,7 @@ const Crosshair = ({ className }: { className?: string }) => (
 
 export default function TechTopology() {
   return (
-    <section className="w-full bg-background pt-32 pb-24 flex justify-center overflow-hidden">
+    <section id='techstack' className="w-full bg-background pt-32 pb-24 flex justify-center overflow-hidden">
       <div className="w-full max-w-7xl px-6 md:px-12 flex flex-col gap-16">
         
         <Reveal delay={0.1}>
